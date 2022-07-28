@@ -9,6 +9,7 @@ Install Main packages:
 
 ```sh
 $ cd catkin_ws/src
+$ git clone https://github.com/bosskitti7983/mcpig_ii_motor_control_station.git
 $ git clone https://github.com/bosskitti7983/db_alpha_interface.git
 $ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
 $ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
