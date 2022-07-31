@@ -8,8 +8,9 @@ id_1:
   #  Position_P_Gain: 400
   #  Position_I_Gain: 200
   #  Position_D_Gain: 50
-  Profile_Velocity: 200
+  # Profile_Velocity: 200
   #  Profile_Acceleration: 50
+  Velocity_Limit: 350
   
 
   
