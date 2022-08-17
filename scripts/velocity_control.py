@@ -45,7 +45,7 @@ def talker():
         joint_state.velocity[0] = input_rad_p_s
         # joint_state.position[0] = 0.5
 
-        hello_str = "hello world %s" % rospy.get_time()
+        # hello_str = "hello world %s" % rospy.get_time()
         # rospy.loginfo(hello_str)
         pub.publish(joint_state)
         rate.sleep()
