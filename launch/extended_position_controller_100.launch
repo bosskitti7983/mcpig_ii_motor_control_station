@@ -4,7 +4,7 @@
    <arg name="dxl_baud_rate" default="115200"/>
 
 
-   <param name="dynamixel_info" value="$(find mcpig_ii_motor_control_station)/config/motor_extended_position_25.yaml"/> 
+   <param name="dynamixel_info" value="$(find mcpig_ii_motor_control_station)/config/motor_extended_position_100.yaml"/> 
  
    <node name="db_dynamixel_ROS_driver" pkg="db_alpha_controllers" type="position_controller" required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)"/>
 

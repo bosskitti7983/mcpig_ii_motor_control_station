@@ -9,19 +9,16 @@ from math import pi
 from time import sleep
 
 
-wheel_size_mm = 42.0
-max_rpm = 70.0
+# max_rpm = 70.0
 # limit_speed_rpm = lambda input_percent : min(max( (float(input_percent)/max_rpm*100.0 )/60.0*2*pi , -max_rpm/60.0*2*pi), max_rpm/60.0*2*pi)   
-limit_speed_rpm = lambda input_percent : min(max( (float(input_percent)/max_rpm*100.0 )/60.0*2*pi , 0), max_rpm/60.0*2*pi)   
+# limit_speed_rpm = lambda input_percent : min(max( (float(input_percent)/max_rpm*100.0 )/60.0*2*pi , 0), max_rpm/60.0*2*pi)   
 # speed =  1/.229  ==> 41rpm / 2/3 rps 
 
-speed = lambda input : 70/60*2*pi    
+# speed = lambda input : 70/60*2*pi    
 
 # speed = min(max(speed, -limit_speed) , limit_speed)
 
-approx_wheel_radius = pi * 1e-3 * 43
-
-offset_position = 0
+approx_wheel_radius = pi * 1e-3 * (45.5)
 
 callback_name = None
 callback_position = None
@@ -76,8 +73,10 @@ def talker():
         # input_rad_p_s = limit_speed_rpm(float(input('input rpm(max is 70)')))
         
 
-
-        moving_distance = float(input('distance (max 2.5 m, m) :')) 
+        try : 
+            moving_distance = float(input('distance (max 2.5 m, m) :')) 
+        except Exception:
+            exit('')
 
         # input_rad_p_s = limit_speed_rpm(float(rospy.get_param('/mcpig_ii_motor_torque_control/distance')))
         # moving_distance =  min(2.5, float( rospy.get_param('/mcpig_ii_motor_torque_control/speed') ))

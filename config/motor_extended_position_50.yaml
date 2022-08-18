@@ -8,7 +8,7 @@ id_1:
   #  Position_P_Gain: 400
   #  Position_I_Gain: 200
   #  Position_D_Gain: 50
-  Profile_Velocity: 87.5 # *.229 to find rpm
+  Profile_Velocity: 153 # *.229 to find rpm
   #  Profile_Acceleration: 50
   Velocity_Limit: 350
   
