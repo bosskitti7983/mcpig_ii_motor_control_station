@@ -45,7 +45,7 @@ def talker():
            input_rad_p_s=0.0
         else : 
             input_rad_p_s= float(input_rad_p_s)
-            sleep(2)
+            # sleep(2)
 
         input_rad_p_s = limit_speed_rpm(input_rad_p_s)
         rospy.loginfo("set speed {rpm:.2f} rpm, (approx) {mmps:.2f} mm/s".format(rpm=input_rad_p_s*60/(2*pi), mmps=(input_rad_p_s/(2*pi)*pi*wheel_size_mm) ))

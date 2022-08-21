@@ -67,16 +67,24 @@ def talker():
     first_position = callback_position
     rospy.loginfo('wait for first position data {}'.format(first_position))
 
+    moving_distance = 0
+
     while not rospy.is_shutdown():
    
 
         # input_rad_p_s = limit_speed_rpm(float(input('input rpm(max is 70)')))
         
+        distance_input = input('unit m :')
 
-        try : 
-            moving_distance = float(input('distance (max 2.5 m, m) :')) 
-        except Exception:
-            exit('')
+        if distance_input != "":
+            moving_distance = float(distance_input) 
+        else :
+            pass
+
+        # try : 
+        #     moving_distance = float() 
+        # except Exception:
+        #     exit('')
 
         # input_rad_p_s = limit_speed_rpm(float(rospy.get_param('/mcpig_ii_motor_torque_control/distance')))
         # moving_distance =  min(2.5, float( rospy.get_param('/mcpig_ii_motor_torque_control/speed') ))
