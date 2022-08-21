@@ -1,0 +1,17 @@
+<!--<?xml version="1.0"?>-->
+<launch>
+   <arg name="usb_port" default="/dev/ttyUSB0"/>
+   <arg name="dxl_baud_rate" default="115200"/>
+
+
+   <param name="dynamixel_info" value="$(find mcpig_ii_motor_control_station)/config/motor_extended_position_75.yaml"/> 
+ 
+   <node name="db_dynamixel_ROS_driver" pkg="db_alpha_controllers" type="position_controller" required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)"/>
+
+   <node name="mcpig_ii_motor_torque_control" pkg="mcpig_ii_motor_control_station" type="extended_position_control.py" required="true" output="screen">
+
+   </node>
+      
+</launch>
+
+
