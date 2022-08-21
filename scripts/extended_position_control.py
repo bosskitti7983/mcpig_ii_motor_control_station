@@ -18,7 +18,7 @@ from time import sleep
 
 # speed = min(max(speed, -limit_speed) , limit_speed)
 
-approx_wheel_radius = pi * 1e-3 * (45.5)
+approx_wheel_radius = pi * 1e-3 * (39.2)
 
 callback_name = None
 callback_position = None
