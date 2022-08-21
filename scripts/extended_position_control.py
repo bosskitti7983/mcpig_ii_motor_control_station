@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from sys import exit
+from turtle import setposition
 import rospy
 from std_msgs.msg import String
 from sensor_msgs.msg import JointState
@@ -69,15 +70,20 @@ def talker():
 
     moving_distance = 0
 
+    set_position = 0
     while not rospy.is_shutdown():
    
 
         # input_rad_p_s = limit_speed_rpm(float(input('input rpm(max is 70)')))
         
-        distance_input = input('unit m :')
+        distance_input = input('unit m (incremental) :')
 
         if distance_input != "":
-            moving_distance = float(distance_input) 
+
+            moving_distance = float(distance_input) + set_position
+            set_position = float(moving_distance)
+            
+             
         else :
             pass
 
@@ -92,7 +98,7 @@ def talker():
 
         joint_state.velocity[0] = 0
         joint_state.position[0] = ((moving_distance) / approx_wheel_radius  * 2*pi )+ float(first_position[0])
-
+        
 
 
         # hello_str = "hello world %s" % rospy.get_time()
